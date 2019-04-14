@@ -4,6 +4,7 @@ const zeroPadding = (num, digit) => {
 }
 
 export default {
+	props: ["location", "diff"],
 	data() {
 		return {
 			date: new Date(),
@@ -36,6 +37,7 @@ export default {
 	methods: {
 		setDate() {
 			this.date = new Date()
+			this.date.setHours(this.date.getHours() + this.diff)
 		},
 	},
 }
